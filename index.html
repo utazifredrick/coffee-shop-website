@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Brew Haven is a contemporary coffee house serving handcrafted espresso, artisanal pastries, and warm community moments."
+    />
+    <title>Brew Haven | Crafted with passion. Served with warmth.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="Brew Haven home">
+          <span class="brand-mark"><i class="fa-solid fa-mug-hot"></i></span>
+          <span class="brand-text">Brew Haven</span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="cart-button" id="cart-button" type="button" aria-label="Open order cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart panel">
+      <div class="cart-header">
+        <h3>Your Order</h3>
+        <button type="button" class="close-cart" id="close-cart" aria-label="Close cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <p class="cart-empty">Your cart is empty. Start with something warm and delicious.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cart-total">₦0</strong>
+        </div>
+        <button type="button" class="checkout-button">Checkout</button>
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-content reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">Premium coffee • warm community</p>
+            <h1>Your Perfect Cup Starts Here.</h1>
+            <p class="hero-text">
+              Discover carefully crafted coffee, freshly baked treats, and a cozy space made for good moments.
+            </p>
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+              <a href="#contact" class="btn btn-secondary">Order Coffee</a>
+            </div>
+            <ul class="hero-meta" aria-label="Brew Haven highlights">
+              <li><strong>4.9/5</strong> guest rating</li>
+              <li><strong>Fresh</strong> roasted daily</li>
+              <li><strong>Open</strong> every day</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Coffee shop atmosphere illustration">
+            <div class="hero-card main-card">
+              <img
+                src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80"
+                alt="Freshly brewed coffee served in a ceramic cup"
+              />
+            </div>
+            <div class="floating-badge badge-top">
+              <i class="fa-solid fa-seedling"></i>
+              <div>
+                <span>Single Origin</span>
+                <strong>Ethiope Blend</strong>
+              </div>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <i class="fa-solid fa-star"></i>
+              <div>
+                <span>Customer Favorite</span>
+                <strong>Hazelnut Latte</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features section-spacing">
+        <div class="container reveal">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-dark">Why Brew Haven</p>
+            <h2>Every sip is thoughtfully made.</h2>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+              <h3>Freshly Roasted</h3>
+              <p>Premium beans roasted for rich, unforgettable flavor.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+              <h3>Expertly Crafted</h3>
+              <p>Every cup is prepared by passionate baristas.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-bread-slice"></i></div>
+              <h3>Freshly Baked</h3>
+              <p>Delicious pastries and treats made fresh every day.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-house-chimney"></i></div>
+              <h3>Cozy Atmosphere</h3>
+              <p>A welcoming space to relax, work, or catch up.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-spacing">
+        <div class="container about-grid reveal">
+          <div class="about-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80"
+              alt="Coffee shop interior with warm lighting and barista making coffee"
+            />
+          </div>
+
+          <div class="about-content">
+            <p class="eyebrow eyebrow-dark">Our story</p>
+            <h2>More Than Just Coffee</h2>
+            <p>
+              Brew Haven began with a simple idea: coffee should feel personal, comforting, and memorable. We source exceptional beans, create drinks with intention, and build a welcoming space where neighbors, friends, and creatives can slow down and reconnect.
+            </p>
+            <p>
+              From our first roast to the last sip, every detail is shaped by a love for quality coffee, warm hospitality, and the small rituals that make a great day feel even better.
+            </p>
+            <a href="#contact" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu section-spacing">
+        <div class="container reveal">
+          <div class="section-heading centered">
+            <p class="eyebrow eyebrow-dark">Popular picks</p>
+            <h2>Our signature menu</h2>
+          </div>
+
+          <div class="menu-filters" aria-label="Menu filters">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="hot">Hot Coffee</button>
+            <button type="button" class="filter-btn" data-filter="cold">Cold Coffee</button>
+            <button type="button" class="filter-btn" data-filter="pastry">Pastries</button>
+          </div>
+
+          <div class="menu-grid">
+            <article class="menu-card" data-category="hot">
+              <img
+                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80"
+                alt="Espresso in a small ceramic cup"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Espresso</h3>
+                  <span class="price">₦2,500</span>
+                </div>
+                <p>Rich, bold and perfectly balanced.</p>
+                <button type="button" class="add-to-order" data-name="Espresso" data-price="2500">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="hot">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+                alt="Cappuccino topped with milk foam"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Cappuccino</h3>
+                  <span class="price">₦3,500</span>
+                </div>
+                <p>Smooth espresso topped with silky steamed milk.</p>
+                <button type="button" class="add-to-order" data-name="Cappuccino" data-price="3500">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="hot">
+              <img
+                src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=900&q=80"
+                alt="Caffe latte served in a glass cup"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Caffe Latte</h3>
+                  <span class="price">₦3,500</span>
+                </div>
+                <p>Velvety milk blended with rich espresso.</p>
+                <button type="button" class="add-to-order" data-name="Caffe Latte" data-price="3500">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="hot">
+              <img
+                src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80"
+                alt="Mocha with chocolate and milk foam"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Mocha</h3>
+                  <span class="price">₦4,000</span>
+                </div>
+                <p>Espresso, chocolate and creamy steamed milk.</p>
+                <button type="button" class="add-to-order" data-name="Mocha" data-price="4000">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="hot">
+              <img
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80"
+                alt="Caramel macchiato with latte art"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Caramel Macchiato</h3>
+                  <span class="price">₦4,500</span>
+                </div>
+                <p>Sweet caramel with espresso and creamy milk.</p>
+                <button type="button" class="add-to-order" data-name="Caramel Macchiato" data-price="4500">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="cold">
+              <img
+                src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80"
+                alt="Iced coffee served over ice in a tall glass"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Iced Coffee</h3>
+                  <span class="price">₦3,500</span>
+                </div>
+                <p>Refreshing cold coffee served over ice.</p>
+                <button type="button" class="add-to-order" data-name="Iced Coffee" data-price="3500">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="pastry">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80"
+                alt="Freshly baked croissant on a wooden board"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Butter Croissant</h3>
+                  <span class="price">₦2,200</span>
+                </div>
+                <p>Flaky, buttery layers baked to golden perfection.</p>
+                <button type="button" class="add-to-order" data-name="Butter Croissant" data-price="2200">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="menu-card" data-category="pastry">
+              <img
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80"
+                alt="Blueberry muffin dusted with powdered sugar"
+                loading="lazy"
+              />
+              <div class="menu-card-body">
+                <div class="card-header">
+                  <h3>Blueberry Muffin</h3>
+                  <span class="price">₦2,800</span>
+                </div>
+                <p>Moist, rich and packed with sweet berry flavor.</p>
+                <button type="button" class="add-to-order" data-name="Blueberry Muffin" data-price="2800">Add to Order</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="special-offer section-spacing">
+        <div class="container offer-box reveal">
+          <div>
+            <p class="eyebrow">Limited time</p>
+            <h2>Morning Coffee, Better Price.</h2>
+            <p>Get 20% off your first coffee order.</p>
+          </div>
+          <a href="#contact" class="btn btn-light">Claim Offer</a>
+        </div>
+      </section>
+
+      <section id="testimonials" class="testimonials section-spacing">
+        <div class="container reveal">
+          <div class="section-heading centered">
+            <p class="eyebrow eyebrow-dark">Testimonials</p>
+            <h2>What our guests love</h2>
+          </div>
+
+          <div class="testimonial-slider" aria-live="polite">
+            <article class="testimonial active">
+              <div class="stars" aria-label="Five star rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>“Absolutely love this place. The coffee is amazing and the atmosphere is perfect for getting work done.”</p>
+              <h3>Sarah M.</h3>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars" aria-label="Five star rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>“The cappuccino is one of the best I've had. Great service and beautiful environment.”</p>
+              <h3>Daniel O.</h3>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars" aria-label="Five star rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>“Perfect spot for meeting friends. Their pastries are also incredible.”</p>
+              <h3>Grace O.</h3>
+            </article>
+
+            <div class="testimonial-controls" aria-label="Testimonial slide controls">
+              <button type="button" class="testimonial-btn prev" aria-label="Previous testimonial">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" class="testimonial-btn next" aria-label="Next testimonial">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery section-spacing">
+        <div class="container reveal">
+          <div class="section-heading centered">
+            <p class="eyebrow eyebrow-dark">From bean to brew</p>
+            <h2>Moments worth savoring</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item tall">
+              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Coffee cups on a table" loading="lazy" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="Latte art in a coffee cup" loading="lazy" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=80" alt="Fresh pastries on a brunch table" loading="lazy" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="Coffee beans in a rustic bowl" loading="lazy" />
+            </figure>
+            <figure class="gallery-item wide">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="Cafe interior with warm wooden furniture" loading="lazy" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Barista preparing a coffee drink" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-spacing">
+        <div class="container contact-wrap reveal">
+          <div class="contact-details">
+            <p class="eyebrow eyebrow-dark">Visit us</p>
+            <h2>Make your next coffee stop memorable.</h2>
+            <div class="contact-list">
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>12 Coffee Street, Enugu, Nigeria</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <h3>Phone</h3>
+                  <p><a href="tel:+2348001234567">+234 800 123 4567</a></p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p><a href="mailto:hello@brewhaven.com">hello@brewhaven.com</a></p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <h3>Opening Hours</h3>
+                  <p>Monday–Friday: 7:00 AM – 9:00 PM<br />Saturday–Sunday: 8:00 AM – 10:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Your email" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="How can we help?" />
+            </div>
+
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+            <p id="form-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand" aria-label="Brew Haven home">
+            <span class="brand-mark"><i class="fa-solid fa-mug-hot"></i></span>
+            <span class="brand-text">Brew Haven</span>
+          </a>
+          <p>
+            Crafted with passion. Served with warmth.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>12 Coffee Street, Enugu</li>
+            <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
+            <li><a href="mailto:hello@brewhaven.com">hello@brewhaven.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Follow Us</h3>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container">© 2026 Brew Haven. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
