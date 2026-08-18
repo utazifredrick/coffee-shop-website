@@ -967,6 +967,15 @@ body[data-theme="dark"] .contact-form textarea::placeholder {
   border-bottom: 1px solid var(--border);
 }
 
+.cart-item-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+}
+
 .cart-item:last-child {
   border-bottom: none;
 }
