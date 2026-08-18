@@ -23,6 +23,25 @@ const revealItems = document.querySelectorAll('.reveal');
 let cart = JSON.parse(localStorage.getItem('brewHavenCart')) || [];
 let testimonialIndex = 0;
 
+/**
+ * Ensure cart items have image URLs. When items were saved before images were captured,
+ * attempt to resolve their image by looking up the corresponding menu card.
+ */
+function resolveCartImages() {
+  cart = cart.map((item) => {
+    if (item.image) return item;
+    const btn = document.querySelector(`.add-to-order[data-name="${item.name}"]`);
+    if (btn) {
+      const imgEl = btn.closest('.menu-card')?.querySelector('img');
+      if (imgEl && imgEl.src) {
+        return { ...item, image: imgEl.src };
+      }
+    }
+    // fallback: small transparent placeholder
+    return { ...item, image: 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBA==' };
+  });
+}
+
 function formatNumber(value) {
   return new Intl.NumberFormat('en-NG', {
     style: 'currency',
@@ -41,23 +60,24 @@ function updateCart() {
       .map(
         (item) => `
           <div class="cart-item">
-            <div class="cart-item-name">${item.name}</div>
+              <img class="cart-item-thumb" src="${item.image || ''}" alt="${item.name} thumbnail" />
             <div>
-              <div class="cart-item-meta">
-                <span>${formatNumber(item.price)}</span>
-                <div class="qty-controls" aria-label="Quantity controls for ${item.name}">
-                  <button type="button" data-action="decrease" data-name="${item.name}" aria-label="Decrease quantity">-</button>
-                  <span>${item.quantity}</span>
-                  <button type="button" data-action="increase" data-name="${item.name}" aria-label="Increase quantity">+</button>
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-meta">
+                  <span>${formatNumber(item.price)}</span>
+                  <div class="qty-controls" aria-label="Quantity controls for ${item.name}">
+                    <button type="button" data-action="decrease" data-name="${item.name}" aria-label="Decrease quantity">-</button>
+                    <span>${item.quantity}</span>
+                    <button type="button" data-action="increase" data-name="${item.name}" aria-label="Increase quantity">+</button>
+                  </div>
                 </div>
               </div>
+              <button type="button" class="remove-item" data-name="${item.name}" aria-label="Remove ${item.name}">Remove</button>
             </div>
-            <button type="button" class="remove-item" data-name="${item.name}" aria-label="Remove ${item.name}">Remove</button>
-          </div>
-        `
-      )
-      .join('');
-  }
+          `
+        )
+        .join('');
+    }
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   cartTotal.textContent = formatNumber(total);
@@ -235,19 +255,25 @@ function attachEvents() {
   addToOrderButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const { name, price } = button.dataset;
-      const existingItem = cart.find((item) => item.name === name);
+        // try to grab the product image from the card
+        const imgEl = button.closest('.menu-card')?.querySelector('img');
+        const image = imgEl?.src || '';
 
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name, price: Number(price), quantity: 1 });
-      }
+        const existingItem = cart.find((item) => item.name === name);
 
-      updateCart();
-      cartPanel.classList.add('open');
-      showToast(`${name} added to your order.`);
+        if (existingItem) {
+          existingItem.quantity += 1;
+          // ensure image is present
+          if (!existingItem.image && image) existingItem.image = image;
+        } else {
+          cart.push({ name, price: Number(price), quantity: 1, image });
+        }
+
+        updateCart();
+        cartPanel.classList.add('open');
+        showToast(`${name} added to your order.`);
+      });
     });
-  });
 
   prevButton.addEventListener('click', () => moveTestimonials(-1));
   nextButton.addEventListener('click', () => moveTestimonials(1));
@@ -274,6 +300,8 @@ function attachEvents() {
 function init() {
   const theme = getSavedTheme();
   setTheme(theme);
+  // Resolve any missing image URLs for items persisted before thumbnail support
+  resolveCartImages();
   updateCart();
   setupRevealObserver();
   attachEvents();
